@@ -1,0 +1,73 @@
+
+.main-head{
+    height: 100vh;
+    background-image: linear-gradient(-70deg, #1a0f3e 53%,#6457c6 100%);
+    @include flex(start,start,row);
+    
+    .vertical-nav{
+       // background-color: brown;
+        height: 72.5vh;
+        width: 16rem;
+
+        .icones{
+            //background-color: black;
+            min-height: 70vh;
+
+            @include flex(start,center,column);
+            img{
+                margin: 5rem;
+                max-width: 5rem;
+                max-height: 5rem;
+            }
+        }
+    }
+}
+
+.logo{
+    img{
+        height: 8rem;
+        width: 8rem;
+        margin: 4rem;
+    }
+    //background-color: black;
+}
+
+.hero{
+    
+    margin: 30rem 15rem;
+    height: 20rem;
+    width: 70rem;
+    font-family: "Space Mono", monospace;
+    h1{
+        font-size: 7rem;
+        color: #e80fe8;
+    }
+    h2{
+        font-size: 4.5rem;
+        color: #0ecda0;
+    }
+    button{
+
+        height: 5rem;
+        width: 15rem;
+        background: none;
+        margin: 3rem 1rem 0rem 0rem;
+        border-radius: 0.5rem;
+        border: 0.1rem dotted #0ecda0;
+        font-size: 1.7rem;
+        font-weight:550;
+        font-family: "Space Mono", monospace;
+        color: #0ecda0;
+    
+        &:hover{
+            color: #e80fe8;
+            border: 0.1rem dotted #e80fe8;;
+        }
+    }
+
+}
+
+.border-line{
+    height: 90vh;
+    border-left: 0.1rem dotted #0ecda0;
+}
