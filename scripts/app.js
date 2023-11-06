@@ -1,59 +1,15 @@
-const data = [
-    "Hello! I'm Simon",
-    "The Matrix has you...",
-    "Fallow the white rabbit.",
-    "knock, knock, Neo."
-]
-const div = document.querySelector('div');
-const root = document.querySelector(':root');
-const initialDataIndex = 0;
-const writtingTime = 50;
-const daleyTime = 2500;
-const clearingTime = 15;
-const caretBlinking = 700;
+const text1 = {
+  strings: [`> Hello I'm Simon^800`,],
+  typeSpeed: 80,
+  onComplete: function(cursorRemover) { cursorRemover.cursor.remove() }
+};
 
-// initialize
-writeText(initialDataIndex)
-
-
-// Write text function
-function writeText(index){
-let i = 0
-let interval = setInterval(()=>{
-div.innerHTML += data[index][i]
-if(i==data[index].length -1){
-    i = 0
-    clearInterval(interval)
-    setTimeout(clearText, daleyTime)
-}else{
-    i++;
+const text2 = {
+    strings: [`> FrontEnd^300`,`> BackEnd^150`,`> FullStack WebDeveloper`],
+    typeSpeed: 80,
+    backSpeed:60,
+    startDelay: 2600,
     
-}
-}, writtingTime);
-}
-
-//Clear text function
-let dataIndex = initialDataIndex+1
-function clearText(){
-let interval = setInterval(() => {
-let divData = div.innerHTML
-if(divData !==''){
-    div.innerHTML= divData.substring(0,divData.length-1)
-    root.style.setProperty('--caret-display', 'inline-block')
-}else{
-    clearInterval(interval)
-    writeText(dataIndex);
-    (dataIndex == data.length-1) ? dataIndex = 0 : dataIndex++
-}
-}, clearingTime);
-}
-
-// Blinking bar arrow function
-setInterval(()=> {
-let prop = getComputedStyle(root).getPropertyValue('--caret-display')
-if(prop == 'none'){
-root.style.setProperty('--caret-display', 'inline-block')
-}else{
-root.style.setProperty('--caret-display', 'none')
-}
-}, caretBlinking);
+  };
+const headline = new Typed('#name',text1);
+const subtitle = new Typed('#position',text2);
