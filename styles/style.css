@@ -74,4 +74,14 @@ html {
   margin-top: 1rem;
   height: 90vh;
   border-left: 0.1rem dotted #0ecda0;
+}
+
+.background {
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
 }/*# sourceMappingURL=style.css.map */
